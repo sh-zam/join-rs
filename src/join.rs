@@ -1,18 +1,4 @@
-#![crate_name = "uu_join"]
-
-/*
- * This file is part of the uutils coreutils package.
- *
- * (c) Konstantin Pospelov <kupospelov@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-extern crate clap;
-
-#[macro_use]
-extern crate uucore;
+extern crate clap; 
 
 use std::fs::File;
 use std::io::{stdin, BufRead, BufReader, Lines, Stdin};
@@ -439,7 +425,7 @@ impl<'a> State<'a> {
     }
 }
 
-pub fn uumain(args: Vec<String>) -> i32 {
+pub fn umain(args: Vec<String>) -> i32 {
     let matches = App::new(NAME)
         .version(VERSION)
         .about(
@@ -600,7 +586,6 @@ FILENUM is 1 or 2, corresponding to FILE1 or FILE2",
     if file1 == "-" && file2 == "-" {
         crash!(1, "both files cannot be standard input");
     }
-
     exec(file1, file2, &settings)
 }
 
@@ -706,7 +691,7 @@ fn parse_field_number(value: &str) -> usize {
     }
 }
 
-fn parse_file_number(value: &str) -> FileNum {
+fn parse_file_number(value: &str) -> FileNum { 
     match value {
         "1" => FileNum::File1,
         "2" => FileNum::File2,
@@ -717,3 +702,4 @@ fn parse_file_number(value: &str) -> FileNum {
 fn parse_field_number_option(value: Option<&str>) -> Option<usize> {
     Some(parse_field_number(value?))
 }
+

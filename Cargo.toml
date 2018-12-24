@@ -1,17 +1,11 @@
 [package]
-name = "join"
+name = "join-rs"
 version = "0.0.1"
-authors = []
-build = "../../mkmain.rs"
+authors = ["Sharaf Zaman <sharafzaz121@gmail.com>"]
+edition = "2018"
 
 [lib]
-name = "uu_join"
-path = "join.rs"
+name = "join_rs" 
 
 [dependencies]
-clap = "2.32.0"
-uucore = { path="../uucore" }
-
-[[bin]]
-name = "join"
-path = "../../uumain.rs"
+clap = "2.32.0" 
